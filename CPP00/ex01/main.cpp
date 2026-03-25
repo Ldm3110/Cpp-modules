@@ -10,9 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include <iostream>
+#include <string>
 #include "classes/Contact.hpp"
 #include "classes/Phonebook.hpp"
+#include "utils/utils.hpp"
 
 static void	create_contact(Phonebook *phonebook)
 {
@@ -33,6 +36,28 @@ static void	create_contact(Phonebook *phonebook)
 	phonebook->addContact(contact);
 }
 
+static void	search_and_display(Phonebook phonebook)
+{
+	std::string	choice;
+	int			indexMax;
+
+	indexMax = phonebook.getIndex() - 1;
+	phonebook.renderContacts();
+	while (1)
+	{
+		std::cin.ignore();
+		std::cout << "Which contact would you like to see ? ";
+		std::cin >> choice;
+		if (std::stoi(choice) >= 0 && std::stoi(choice) <= indexMax)
+		{
+			display_contact_data(phonebook.getSpecificContact(std::stoi(choice)));	
+			break ;
+		}
+		else
+			std::cout << "This index don't exist !\n";
+	}
+}
+
 static void	choice_manager(void)
 {
 	std::string choice;
@@ -45,13 +70,14 @@ static void	choice_manager(void)
 		if (choice == "ADD")
 			create_contact(&phonebook);	
 		else if (choice == "SEARCH")
-			phonebook.renderContacts();
+			search_and_display(phonebook);
 		else if (choice == "EXIT")
 		{
 			std::cout << "Thank you !! see you later :) !\n";
 			return ;
 		}
-		else {
+		else
+		{
 			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT\n";
 		}
 	}	
