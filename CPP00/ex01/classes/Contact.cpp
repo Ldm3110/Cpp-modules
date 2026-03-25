@@ -40,6 +40,31 @@ void	Contact::getIdentity(void)
 	std::cout << "Contact = " + this->_first_name + " " + this->_last_name + "\n";
 }
 
+std::string	Contact::getFirstName(void)
+{
+	return (this->_first_name);
+}
+
+std::string	Contact::getLastName(void)
+{
+	return (this->_last_name);
+}
+
+std::string	Contact::getNickname(void)
+{
+	return (this->_nickname);
+}
+
+std::string	Contact::getPhoneNumber(void)
+{
+	return (this->_phone_number);
+}
+
+std::string	Contact::getDarkSecret(void)
+{
+	return (this->_dark_secret);
+}
+
 // render
 void    Contact::printRow(int index)
 {

@@ -31,8 +31,17 @@ class Contact {
 			std::string nickname,
 			std::string phone_number,
 			std::string dark_secret);
-	
-		void	getIdentity(void);
+
+		// getter
+		void		getIdentity(void);
+		std::string	getFirstName(void);
+		std::string	getLastName(void);
+		std::string	getNickname(void);
+		std::string	getPhoneNumber(void);
+		std::string	getDarkSecret(void);
+
+
+		// printer
 		void    printRow(int index);
 };
 
