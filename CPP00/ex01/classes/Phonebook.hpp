@@ -26,6 +26,8 @@ class Phonebook {
 
 		void	renderContacts(void);
 		void	addContact(Contact contact);
+		int		getIndex(void);
+		Contact	getSpecificContact(int index);
 };
 
 #endif

@@ -44,3 +44,12 @@ void	Phonebook::addContact(Contact contact)
 	this->count++;
 	std::cout << "Contact added in phonebook\n";
 }
+
+int	Phonebook::getIndex(void) {
+	return (this->index);
+}
+
+Contact	Phonebook::getSpecificContact(int index)
+{
+	return (this->contacts[index]);
+}
