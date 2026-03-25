@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../classes/Contact.hpp"
 #include <iostream>
 #include <iomanip>
 
@@ -27,4 +28,13 @@ void	display_header(void)
     std::cout << std::setw(10) << std::right << "Last Name" << "|";
     std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
     std::cout << std::string(43, '-') << std::endl;
+}
+
+void	display_contact_data(Contact contact)
+{
+	std::cout << "First Name = " + contact.getFirstName() << std::endl;
+	std::cout << "Last Name = " + contact.getLastName() << std::endl;
+	std::cout << "Nickname = " + contact.getNickname() << std::endl;
+	std::cout << "Phone Number = " + contact.getPhoneNumber() << std::endl;
+	std::cout << "Dark Secret = " + contact.getDarkSecret() << std::endl;
 }

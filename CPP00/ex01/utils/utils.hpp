@@ -13,9 +13,10 @@
 #ifndef UTILS_H
 # define UTILS_H
 
-#include <iostream>
+#include "../classes/Contact.hpp"
 
 void		display_header(void);
 std::string	truncate(std::string str, int width);
+void		display_contact_data(Contact contact);
 
 #endif
