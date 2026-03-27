@@ -48,9 +48,9 @@ static void	search_and_display(Phonebook phonebook)
 		std::cin.ignore();
 		std::cout << "Which contact would you like to see ? ";
 		std::cin >> choice;
-		if (std::stoi(choice) >= 0 && std::stoi(choice) <= indexMax)
+		if (atoi(choice.c_str()) >= 0 && atoi(choice.c_str()) <= indexMax)
 		{
-			display_contact_data(phonebook.getSpecificContact(std::stoi(choice)));	
+			display_contact_data(phonebook.getSpecificContact(atoi(choice.c_str())));	
 			break ;
 		}
 		else
