@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lude-mat <lude-mat@student.42angouleme.fr  +#+  +:+       +#+        */
+/*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:45:29 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/03/25 11:57:30 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/04/22 23:40:10 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 #include"../utils/utils.hpp"
 #include <iostream>
 
-Phonebook::Phonebook()
-{
-	this->count = 0;
-	this->index = 0;
-}
+Phonebook::Phonebook(): count(0), index(0)
+{}
 
-void	Phonebook::renderContacts(void)
+int	Phonebook::renderContacts(void)
 {
 	int	i = 0;
 
 	if (this->count == 0)
 	{
 		std::cout << "No contacts available in your Phonebook\n";
-		return ;
+		return (0);
 	}
 	display_header();
 	while (i < this->count)
@@ -35,6 +32,7 @@ void	Phonebook::renderContacts(void)
 		contacts[i].printRow(i);		
 		i++;
 	}
+	return (1);
 }
 
 void	Phonebook::addContact(Contact contact)

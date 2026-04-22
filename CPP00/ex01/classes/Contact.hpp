@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lude-mat <lude-mat@student.42angouleme.fr  +#+  +:+       +#+        */
+/*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 08:17:54 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/03/25 11:48:21 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/04/21 14:15:46 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 
 class Contact {
+
 	private:
 		std::string _first_name;
 		std::string	_last_name;
@@ -39,7 +40,6 @@ class Contact {
 		std::string	getNickname(void);
 		std::string	getPhoneNumber(void);
 		std::string	getDarkSecret(void);
-
 
 		// printer
 		void    printRow(int index);

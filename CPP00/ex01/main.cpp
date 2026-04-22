@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lude-mat <lude-mat@student.42angouleme.fr  +#+  +:+       +#+        */
+/*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 23:47:07 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/03/25 12:02:12 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/04/23 00:16:32 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <limits>
 #include "classes/Contact.hpp"
 #include "classes/Phonebook.hpp"
 #include "utils/utils.hpp"
@@ -25,7 +27,7 @@ static void	create_contact(Phonebook *phonebook)
 	std::string	phone_number;
 	std::string	dark_secret;
 
-	std::cin.ignore(); // remove \n before use getline
+	std::cin.ignore(1000, '\n');
 	std::cout << "First Name = "; std::getline(std::cin, first_name);
 	std::cout << "Last Name = "; std::getline(std::cin, last_name);
 	std::cout << "Nickname = "; std::getline(std::cin, nickname);
@@ -36,25 +38,31 @@ static void	create_contact(Phonebook *phonebook)
 	phonebook->addContact(contact);
 }
 
-static void	search_and_display(Phonebook phonebook)
+static void	search_and_display(Phonebook &phonebook)
 {
-	std::string	choice;
-	int			indexMax;
+	int	choice;
+	int	indexMax;
 
 	indexMax = phonebook.getIndex() - 1;
-	phonebook.renderContacts();
+	if (!phonebook.renderContacts())
+		return ;
 	while (1)
 	{
-		std::cin.ignore();
-		std::cout << "Which contact would you like to see ? ";
+		std::cout << "Which contact would you like to see ? (enter -1 to go back) -> ";
 		std::cin >> choice;
-		if (atoi(choice.c_str()) >= 0 && atoi(choice.c_str()) <= indexMax)
+		if (std::cin.fail() || choice < -1 || choice > indexMax)
 		{
-			display_contact_data(phonebook.getSpecificContact(atoi(choice.c_str())));	
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+			std::cout << "You must enter number between 0 and " << indexMax << std::endl;
+		}
+		else if (choice == -1)
+			break;
+		else if (choice >= 0 && choice <= indexMax)
+		{
+			display_contact_data(phonebook.getSpecificContact(choice));	
 			break ;
 		}
-		else
-			std::cout << "This index don't exist !\n";
 	}
 }
 
@@ -65,7 +73,7 @@ static void	choice_manager(void)
 
 	while (1)
 	{
-		std::cout << "\nPlease choose your option (ADD, SEARCH, EXIT)\n";
+		std::cout << "\nPlease choose your option (ADD, SEARCH, EXIT)" << std::endl;
 		std::cin >> choice;
 		if (choice == "ADD")
 			create_contact(&phonebook);	
@@ -73,12 +81,12 @@ static void	choice_manager(void)
 			search_and_display(phonebook);
 		else if (choice == "EXIT")
 		{
-			std::cout << "Thank you !! see you later :) !\n";
+			std::cout << "Thank you !! see you later :) !" << std::endl;
 			return ;
 		}
 		else
 		{
-			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT\n";
+			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << std::endl;
 		}
 	}	
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lude-mat <lude-mat@student.42angouleme.fr  +#+  +:+       +#+        */
+/*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 08:37:00 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/03/25 11:48:49 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/04/22 17:32:09 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ Contact::Contact(
     std::string last_name,
     std::string nickname,
     std::string phone_number,
-    std::string dark_secret)
-{
-    this->_first_name = first_name;
-    this->_last_name = last_name;
-    this->_nickname = nickname;
-    this->_phone_number = phone_number;
-    this->_dark_secret = dark_secret;
-}
+    std::string dark_secret) :
+    _first_name(first_name),
+    _last_name(last_name),
+    _nickname(nickname),
+    _phone_number(phone_number),
+    _dark_secret(dark_secret)
+{}
 
 // getter
 void	Contact::getIdentity(void)
