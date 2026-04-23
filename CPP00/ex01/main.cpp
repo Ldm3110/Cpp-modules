@@ -6,13 +6,14 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 23:47:07 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/23 00:16:32 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/04/23 08:52:54 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <sstream>
 #include <limits>
 #include "classes/Contact.hpp"
@@ -27,7 +28,6 @@ static void	create_contact(Phonebook *phonebook)
 	std::string	phone_number;
 	std::string	dark_secret;
 
-	std::cin.ignore(1000, '\n');
 	std::cout << "First Name = "; std::getline(std::cin, first_name);
 	std::cout << "Last Name = "; std::getline(std::cin, last_name);
 	std::cout << "Nickname = "; std::getline(std::cin, nickname);
@@ -74,12 +74,12 @@ static void	choice_manager(void)
 	while (1)
 	{
 		std::cout << "\nPlease choose your option (ADD, SEARCH, EXIT)" << std::endl;
-		std::cin >> choice;
-		if (choice == "ADD")
+		std::getline(std::cin, choice);
+		if (!std::strcmp(choice.c_str(), "ADD"))
 			create_contact(&phonebook);	
-		else if (choice == "SEARCH")
+		else if (!std::strcmp(choice.c_str(), "SEARCH"))
 			search_and_display(phonebook);
-		else if (choice == "EXIT")
+		else if (!std::strcmp(choice.c_str(), "EXIT"))
 		{
 			std::cout << "Thank you !! see you later :) !" << std::endl;
 			return ;

@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 08:17:54 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/21 14:15:46 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/04/23 08:57:25 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 class Contact {
 
 	private:
-		std::string _first_name;
-		std::string	_last_name;
+		std::string _firstName;
+		std::string	_lastName;
 		std::string	_nickname;
-		std::string	_phone_number;
-		std::string	_dark_secret;
+		std::string	_phoneNumber;
+		std::string	_darkSecret;
 
 	public:
 		Contact();
 		Contact(
-			std::string first_name,
-			std::string last_name,
+			std::string firstName,
+			std::string lastName,
 			std::string nickname,
-			std::string phone_number,
-			std::string dark_secret);
+			std::string phoneNumber,
+			std::string darkSecret);
 
 		// getter
 		void		getIdentity(void);
