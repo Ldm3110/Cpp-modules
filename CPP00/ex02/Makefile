@@ -4,7 +4,8 @@ CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = tests.cpp \
-	   Account.cpp\
+	   classes/Account/Account.cpp\
+	   classes/Account/accountDisplay.cpp\
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
