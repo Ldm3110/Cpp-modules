@@ -1,7 +1,7 @@
 NAME = cpp01ex00
 
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CC = clang++
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 SRCS = Zombie.cpp\
 	   main.cpp\
