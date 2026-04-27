@@ -1,7 +1,7 @@
 NAME = cpp01ex03
 
 CC = clang++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 SRCS =	main.cpp\
 		classes/humanA.cpp\
