@@ -34,16 +34,14 @@ static void	create_contact(Phonebook *phonebook)
 	std::cout << "Phone Number = "; std::getline(std::cin, phone_number);
 	std::cout << "Dark Secret = "; std::getline(std::cin, dark_secret);
 	Contact contact(first_name, last_name, nickname, phone_number, dark_secret);
-	contact.getIdentity();
 	phonebook->addContact(contact);
 }
 
 static void	search_and_display(Phonebook &phonebook)
 {
 	int	choice;
-	int	indexMax;
+	int	indexMax = phonebook.getIndex() - 1;
 
-	indexMax = phonebook.getIndex() - 1;
 	if (!phonebook.renderContacts())
 		return ;
 	while (1)

@@ -34,7 +34,7 @@ class Contact {
 			std::string darkSecret);
 
 		// getter
-		void		getIdentity(void);
+		std::string	getIdentity(void);
 		std::string	getFirstName(void);
 		std::string	getLastName(void);
 		std::string	getNickname(void);

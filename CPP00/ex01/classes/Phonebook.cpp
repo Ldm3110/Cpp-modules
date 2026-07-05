@@ -40,7 +40,7 @@ void	Phonebook::addContact(Contact contact)
 	contacts[this->index] = contact;
 	this->index++;
 	this->count++;
-	std::cout << "Contact added in phonebook\n";
+	std::cout << "Contact " + contact.getIdentity() + " added in phonebook\n";
 }
 
 int	Phonebook::getIndex(void) {

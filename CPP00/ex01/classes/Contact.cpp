@@ -34,9 +34,9 @@ Contact::Contact(
 {}
 
 // getter
-void	Contact::getIdentity(void)
+std::string Contact::getIdentity(void)
 {
-	std::cout << "Contact = " + this->_firstName + " " + this->_lastName + "\n";
+	return (this->_firstName + " " + this->_lastName);
 }
 
 std::string	Contact::getFirstName(void)
