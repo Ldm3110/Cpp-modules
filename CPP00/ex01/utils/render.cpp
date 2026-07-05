@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../classes/Contact.hpp"
+#include "../classes/Phonebook.hpp"
 #include <iostream>
 #include <iomanip>
 
@@ -28,6 +29,19 @@ void	display_header(void)
     std::cout << std::setw(10) << std::right << "Last Name" << "|";
     std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
     std::cout << std::string(43, '-') << std::endl;
+}
+
+void	render_contacts(Phonebook &phonebook)
+{
+	int	i = 0;
+	int count = phonebook.getNbContacts();
+
+	while (i < count)
+	{	
+		Contact contact = phonebook.getSpecificContact(i);
+		contact.printRow(i);
+		i++;
+	}
 }
 
 void	display_contact_data(Contact contact)

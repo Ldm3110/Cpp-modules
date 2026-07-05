@@ -14,8 +14,10 @@
 # define UTILS_H
 
 #include "../classes/Contact.hpp"
+#include "../classes/Phonebook.hpp"
 
 void		display_header(void);
+void		render_contacts(Phonebook &phonebook);
 std::string	truncate(std::string str, int width);
 void		display_contact_data(Contact contact);
 

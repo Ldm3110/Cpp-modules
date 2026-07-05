@@ -31,7 +31,8 @@ class Contact {
 			std::string lastName,
 			std::string nickname,
 			std::string phoneNumber,
-			std::string darkSecret);
+			std::string darkSecret
+		);
 
 		// getter
 		std::string	getIdentity(void);

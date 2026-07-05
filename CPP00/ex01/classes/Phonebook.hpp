@@ -24,8 +24,10 @@ class Phonebook {
 	public:
 		Phonebook();
 
+		int		hasContacts(void);
 		int		renderContacts(void);
 		void	addContact(Contact contact);
+		int		getNbContacts(void);
 		int		getIndex(void);
 		Contact	getSpecificContact(int index);
 };

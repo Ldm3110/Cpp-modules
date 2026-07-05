@@ -37,13 +37,22 @@ static void	create_contact(Phonebook *phonebook)
 	phonebook->addContact(contact);
 }
 
-static void	search_and_display(Phonebook &phonebook)
+static void	display_contacts(Phonebook &phonebook)
+{
+	if (!phonebook.hasContacts())
+	{
+		std::cout << "No contact to display from your Phonebook\n";
+		return ;
+	}
+	display_header();
+	render_contacts(phonebook);
+}
+
+static void	search_contact(Phonebook &phonebook)
 {
 	int	choice;
 	int	indexMax = phonebook.getIndex() - 1;
-
-	if (!phonebook.renderContacts())
-		return ;
+	
 	while (1)
 	{
 		std::cout << "Which contact would you like to see ? (enter -1 to go back) -> ";
@@ -76,7 +85,10 @@ static void	choice_manager(void)
 		if (!std::strcmp(choice.c_str(), "ADD"))
 			create_contact(&phonebook);	
 		else if (!std::strcmp(choice.c_str(), "SEARCH"))
-			search_and_display(phonebook);
+		{
+			display_contacts(phonebook);
+			search_contact(phonebook);
+		}
 		else if (!std::strcmp(choice.c_str(), "EXIT"))
 		{
 			std::cout << "Thank you !! see you later :) !" << std::endl;

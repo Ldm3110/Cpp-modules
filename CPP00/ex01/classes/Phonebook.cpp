@@ -17,16 +17,17 @@
 Phonebook::Phonebook(): count(0), index(0)
 {}
 
+int	Phonebook::hasContacts(void)
+{
+	if (this->count == 0)
+		return (0);
+	return (1);
+}
+
 int	Phonebook::renderContacts(void)
 {
 	int	i = 0;
 
-	if (this->count == 0)
-	{
-		std::cout << "No contacts available in your Phonebook\n";
-		return (0);
-	}
-	display_header();
 	while (i < this->count)
 	{
 		contacts[i].printRow(i);		
@@ -37,10 +38,21 @@ int	Phonebook::renderContacts(void)
 
 void	Phonebook::addContact(Contact contact)
 {
-	contacts[this->index] = contact;
-	this->index++;
-	this->count++;
-	std::cout << "Contact " + contact.getIdentity() + " added in phonebook\n";
+	if (this->count < 8) {
+		contacts[this->index] = contact;
+		this->index++;
+		this->count++;
+		std::cout << "Contact " + contact.getIdentity() + " added in phonebook\n";
+	}
+	else {
+		Contact old_contact = contacts[0];
+		contacts[0] = contact;
+		std::cout << "Contact " + old_contact.getIdentity() + " replace by " + contact.getIdentity() + " in your Phonebook\n";
+	}
+}
+
+int Phonebook::getNbContacts(void) {
+	return (this->count);
 }
 
 int	Phonebook::getIndex(void) {
