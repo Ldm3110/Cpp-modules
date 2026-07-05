@@ -26,8 +26,7 @@ int	main(int argc, char **argv)
 	{
 		lowerSentence = argv[nbArg];
 		for (std::string::size_type i = 0 ; i < lowerSentence.length() ; i++)
-			lowerSentence[i] = ::toupper(lowerSentence[i]);
-		std::cout << lowerSentence;
+			std::cout << (char)::toupper((unsigned char)lowerSentence[i]);
 		nbArg++;
 	}
 	std::cout << "\n";
