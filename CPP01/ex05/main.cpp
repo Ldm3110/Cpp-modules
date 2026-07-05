@@ -12,12 +12,12 @@
 
 #include "classes/Harl.hpp"
 
-int main(void)
-{ 
+int main(int argc, char **argv)
+{
+	(void) argc;
     Harl            harl;
-    
-    // declare pointer to function member
-    void (Harl::*ptrFunction)(std::string level) = &Harl::complain;
-    (harl.*ptrFunction)("ERROR");
+	std::string		level = argv[1];
+   
+	harl.complain(level);
     return 0;
 }

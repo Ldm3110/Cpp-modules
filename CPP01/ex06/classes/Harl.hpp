@@ -27,6 +27,7 @@ class Harl {
     Harl();
 
     void    complain(std::string level);
+	void	displayComplain(int index);
 };
 
 #endif

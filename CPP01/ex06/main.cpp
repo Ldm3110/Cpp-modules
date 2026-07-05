@@ -16,14 +16,12 @@ int main(int argc, char **argv)
 { 
     if (argc != 2)
     {
-        std::cout << "Bad number of args - Expected 2\n";
+        std::cout << "Bad number of args\n";
         return 1;
     }
     Harl            harl;
     std::string     level = argv[1];
-    
-    // declare pointer to function member
-    void (Harl::*ptrFunction)(std::string level) = &Harl::complain;
-    (harl.*ptrFunction)(level);
+   
+	harl.complain(level);
     return 0;
 }

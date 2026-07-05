@@ -39,8 +39,7 @@ void    Harl::_error(void)
     std::cout << "ERROR: there's an error\n\n";
 }
 
-//public
-void    Harl::complain(std::string level)
+void	Harl::displayComplain(int index)
 {
     void (Harl::*func[4])(void) = {
         &Harl::_debug,
@@ -48,19 +47,39 @@ void    Harl::complain(std::string level)
         &Harl::_warning,
         &Harl::_error
     };
+
+	while (index < 4)
+	{
+		(this->*func[index])();
+		index++;
+	}
+}
+
+//public
+void    Harl::complain(std::string level)
+{
+	int	index = -1;
     std::string levels[4] = {
         "DEBUG",
         "INFO",
         "WARNING",
         "ERROR"
     };
-    for (int i = 0; i < 4; i++)
-    {
-        if (levels[i] == level)
-        {
-            (this->*func[i])();
-            while (++i < 4)
-                (this->*func[i])();
+
+    for (int i = 0; i < 4; i++) {
+        if (levels[i] == level) {
+			index = i;
         }
     }
+	switch (index) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+			displayComplain(index);
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
+			break;
+	}
 }
