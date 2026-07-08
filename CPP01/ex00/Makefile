@@ -1,6 +1,6 @@
 NAME = cpp01ex00
 
-CC = clang++
+CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 SRCS = Zombie.cpp\

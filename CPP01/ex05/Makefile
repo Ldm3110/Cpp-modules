@@ -1,6 +1,6 @@
 NAME = harl2.0
 
-CC = clang++
+CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 SRCS =	main.cpp\
