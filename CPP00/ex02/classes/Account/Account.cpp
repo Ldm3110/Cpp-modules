@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 23:50:16 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/24 15:10:40 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/09 08:51:00 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,8 @@ bool    Account::makeWithdrawal(int withdrawal)
     Account::_totalNbWithdrawals++;
     std::cout << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << std::endl; 
     return true;
+}
+
+int		Account::checkAmount( void ) const {
+    return (this->_totalAmount);
 }

@@ -9,8 +9,8 @@
 
 
 #pragma once
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+#ifndef __ACXXOUNT_H__
+#define __ACXXOUNT_H__
 
 #include <iostream>
 
@@ -68,4 +68,4 @@ private:
 // ************************************************************************** //
 
 
-#endif /* __ACCOUNT_H__ */
+#endif /* __ACXXOUNT_H__ */
