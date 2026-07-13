@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 19:11:24 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/24 14:16:09 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/13 22:51:18 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void    Account::displayStatus(void) const
         << ";amount:" 
         << this->_amount
         << ";deposits:"
-        << this->_totalNbDeposits
+        << this->_nbDeposits
         << ";withdrawals:"
-        << this->_totalNbWithdrawals
+        << this->_nbWithdrawals
         << std::endl;
 }

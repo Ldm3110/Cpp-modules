@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 23:50:16 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/07/09 08:51:00 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/13 22:54:32 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ Account::Account (int initial_deposit):
     std::cout 
         << " index:" 
         << this->_accountIndex 
-        << ":amount:" 
+        << ";amount:" 
         << this->_amount 
-        << ":created" 
+        << ";created" 
         << std::endl;
     Account::_nbAccounts++;
     Account::_totalAmount += initial_deposit;
@@ -44,9 +44,9 @@ Account::~Account() {
     std::cout 
         << " index:" 
         << this->_accountIndex 
-        << ":amount:" 
+        << ";amount:" 
         << this->_amount 
-        << ":closed" 
+        << ";closed" 
         << std::endl;
 }
 
@@ -57,6 +57,7 @@ void    Account::makeDeposit(int deposit)
     this->_nbDeposits++;
     Account::_totalNbDeposits++;
     Account::_displayTimestamp();
+    Account::_totalAmount += deposit;
     std::cout
         << " index:"
         << this->_accountIndex
@@ -83,8 +84,16 @@ bool    Account::makeWithdrawal(int withdrawal)
     }
     this->_amount -= withdrawal;
     this->_nbWithdrawals++;
+    Account::_totalAmount -= withdrawal;
     Account::_totalNbWithdrawals++;
-    std::cout << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << std::endl; 
+    std::cout 
+        << ";withdrawal:" 
+        << withdrawal 
+        << ";amount:" 
+        << this->_amount
+        << ";nb_withdrawals:"
+        << this->_nbWithdrawals
+        << std::endl; 
     return true;
 }
 
