@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 23:47:07 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/23 08:52:54 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/13 22:06:13 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@
 #include "classes/Phonebook.hpp"
 #include "utils/utils.hpp"
 
+static std::string ask_input(std::string typeField)
+{
+	std::string field;
+
+	while (field.empty())
+	{
+		std::cout << typeField << " = "; 
+		std::getline(std::cin, field);
+		if (std::cin.eof())
+			throw std::runtime_error("\nCtrl-D activation in contact creation\n");
+	}
+	return (field);
+}
+
 static void	create_contact(Phonebook *phonebook)
 {
 	std::string first_name;
@@ -28,11 +42,11 @@ static void	create_contact(Phonebook *phonebook)
 	std::string	phone_number;
 	std::string	dark_secret;
 
-	std::cout << "First Name = "; std::getline(std::cin, first_name);
-	std::cout << "Last Name = "; std::getline(std::cin, last_name);
-	std::cout << "Nickname = "; std::getline(std::cin, nickname);
-	std::cout << "Phone Number = "; std::getline(std::cin, phone_number);
-	std::cout << "Dark Secret = "; std::getline(std::cin, dark_secret);
+	first_name = ask_input("First Name");
+	last_name = ask_input("Last Name");
+	nickname = ask_input("Nickname");
+	phone_number = ask_input("Phone Number");
+	dark_secret = ask_input("Dark Secret");
 	Contact contact(first_name, last_name, nickname, phone_number, dark_secret);
 	phonebook->addContact(contact);
 }
@@ -57,12 +71,14 @@ static void	search_contact(Phonebook &phonebook)
 	{
 		std::cout << "Which contact would you like to see ? (enter -1 to go back) -> ";
 		std::cin >> choice;
-		if (std::cin.fail() || choice < -1 || choice > indexMax)
+		if (std::cin.eof())
+			throw std::runtime_error("\nCtrl-D activation in search menu\n");
+		else if (std::cin.fail() || choice < -1 || choice > indexMax)
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 			std::cout << "You must enter number between 0 and " << indexMax << std::endl;
-		}
+		} 
 		else if (choice == -1)
 			break;
 		else if (choice >= 0 && choice <= indexMax)
@@ -94,6 +110,8 @@ static void	choice_manager(void)
 			std::cout << "Thank you !! see you later :) !" << std::endl;
 			return ;
 		}
+		else if (std::cin.eof())
+			throw std::runtime_error("Ctrl-D activation in main menu !") ;
 		else
 		{
 			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << std::endl;
@@ -105,6 +123,11 @@ int	main(int argc, char **argv)
 {
 	(void) argc;
 	(void) argv;
-	choice_manager();
+	try {
+		choice_manager();
+	} catch (std::runtime_error &e) {
+		std::cout << e.what() << std::endl;
+		return (1);
+	}
 	return (0);
 }
