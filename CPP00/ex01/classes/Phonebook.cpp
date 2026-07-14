@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 10:45:29 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/22 23:40:10 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:32:46 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,17 @@ void	Phonebook::addContact(Contact contact)
 		std::cout << "Contact " + contact.getIdentity() + " added in phonebook\n";
 	}
 	else {
-		Contact old_contact = contacts[0];
-		contacts[0] = contact;
+		int	index = this->count % 8;
+		Contact old_contact = contacts[index];
+
+		contacts[index] = contact;
+		this->count++;
 		std::cout << "Contact " + old_contact.getIdentity() + " replace by " + contact.getIdentity() + " in your Phonebook\n";
 	}
 }
 
 int Phonebook::getNbContacts(void) {
-	return (this->count);
+	return (this->index);
 }
 
 int	Phonebook::getIndex(void) {
