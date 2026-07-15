@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 23:47:07 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/07/15 12:44:40 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:45:42 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,29 +131,6 @@ static void	choice_manager(void)
 			break;
 		}
 	}
-
-	// while (1)
-	// {
-	// 	if (choice == "ADD")
-	// 		create_contact(&phonebook);	
-	// 	else if (choice == "SEARCH")
-	// 	{
-	// 		std::cin.clear();
-	// 		if (!display_contacts(phonebook))
-	// 			search_contact(phonebook);
-	// 	}
-	// 	else if (choice == "EXIT")
-	// 	{
-	// 		std::cout << "Thank you !! see you later :) !" << std::endl;
-	// 		return ;
-	// 	}
-	// 	else if (std::cin.eof())
-	// 		throw std::runtime_error("Ctrl-D activation in main menu !") ;
-	// 	else
-	// 	{
-	// 		std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << "|" << choice << "|" << std::endl;
-	// 	}
-	// }	
 }
 
 int	main(int argc, char **argv)
