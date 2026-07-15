@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 23:47:07 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/07/13 22:06:13 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:44:40 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,23 @@ static void	create_contact(Phonebook *phonebook)
 	phonebook->addContact(contact);
 }
 
-static void	display_contacts(Phonebook &phonebook)
+static int	display_contacts(Phonebook &phonebook)
 {
 	if (!phonebook.hasContacts())
 	{
 		std::cout << "No contact to display from your Phonebook\n";
-		return ;
+		return (1);
 	}
 	display_header();
 	render_contacts(phonebook);
+	return (0);
+}
+
+void	clear_cin()
+{
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+	
 }
 
 static void	search_contact(Phonebook &phonebook)
@@ -69,54 +77,83 @@ static void	search_contact(Phonebook &phonebook)
 	
 	while (1)
 	{
-		std::cout << "Which contact would you like to see ? (enter -1 to go back) -> ";
+		std::cout << "\nWhich contact would you like to see ? (enter -1 to go back) -> ";
 		std::cin >> choice;
 		if (std::cin.eof())
 			throw std::runtime_error("\nCtrl-D activation in search menu\n");
-		else if (std::cin.fail() || choice < -1 || choice > indexMax)
-		{
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<int>::max(), '\n');
-			std::cout << "You must enter number between 0 and " << indexMax << std::endl;
-		} 
-		else if (choice == -1)
-			break;
-		else if (choice >= 0 && choice <= indexMax)
+		if (choice == -1)
+			break ;
+		if (choice >= 0 && choice <= indexMax)
 		{
 			display_contact_data(phonebook.getSpecificContact(choice));	
 			break ;
 		}
+		std::cout << "You must enter number between 0 and " << indexMax << std::endl;
+		clear_cin();
 	}
+	clear_cin();
 }
 
 static void	choice_manager(void)
 {
 	std::string choice;
 	Phonebook	phonebook;
+	std::string	choices[3] = {
+		"ADD",
+		"SEARCH",
+		"EXIT"
+	};
+	int			num_choice = 0;
 
-	while (1)
-	{
+	while (1) {
 		std::cout << "\nPlease choose your option (ADD, SEARCH, EXIT)" << std::endl;
 		std::getline(std::cin, choice);
-		if (!std::strcmp(choice.c_str(), "ADD"))
-			create_contact(&phonebook);	
-		else if (!std::strcmp(choice.c_str(), "SEARCH"))
-		{
-			display_contacts(phonebook);
-			search_contact(phonebook);
+		if (std::cin.eof())
+			throw std::runtime_error("\nCtrl-D activation in search menu\n");
+		for (int i = 0; i < (int)choices->length(); i++) {
+			if (choice == choices[i])
+				num_choice = i + 1;
 		}
-		else if (!std::strcmp(choice.c_str(), "EXIT"))
+		switch (num_choice)
 		{
+		case 1:
+			create_contact(&phonebook);
+			break;
+		case 2:
+			if (!display_contacts(phonebook))
+				search_contact(phonebook);
+			break;
+		case 3:
 			std::cout << "Thank you !! see you later :) !" << std::endl;
-			return ;
+			break;
+		default:
+			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << "|" << choice << "|" << std::endl;
+			break;
 		}
-		else if (std::cin.eof())
-			throw std::runtime_error("Ctrl-D activation in main menu !") ;
-		else
-		{
-			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << std::endl;
-		}
-	}	
+	}
+
+	// while (1)
+	// {
+	// 	if (choice == "ADD")
+	// 		create_contact(&phonebook);	
+	// 	else if (choice == "SEARCH")
+	// 	{
+	// 		std::cin.clear();
+	// 		if (!display_contacts(phonebook))
+	// 			search_contact(phonebook);
+	// 	}
+	// 	else if (choice == "EXIT")
+	// 	{
+	// 		std::cout << "Thank you !! see you later :) !" << std::endl;
+	// 		return ;
+	// 	}
+	// 	else if (std::cin.eof())
+	// 		throw std::runtime_error("Ctrl-D activation in main menu !") ;
+	// 	else
+	// 	{
+	// 		std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << "|" << choice << "|" << std::endl;
+	// 	}
+	// }	
 }
 
 int	main(int argc, char **argv)
