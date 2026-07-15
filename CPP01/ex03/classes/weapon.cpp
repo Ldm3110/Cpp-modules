@@ -6,11 +6,11 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:36:49 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/27 14:09:53 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/15 14:56:51 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "weapon.hpp"
+#include "headers/weapon.hpp"
 
 Weapon::Weapon(std::string type) : _type(type) {}
 

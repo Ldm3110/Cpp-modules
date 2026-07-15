@@ -6,17 +6,22 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:02:01 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/27 14:18:50 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/15 15:18:22 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "humanB.hpp"
+#include "headers/humanB.hpp"
 
-HumanB::HumanB(std::string name): _name(name) {}
+HumanB::HumanB(std::string name): _name(name) {
+    this->_w = NULL;
+}
 
 void    HumanB::attack(void)
 {
-    std::cout << this->_name << " attacks with their " << this->_w->getType() << std::endl;
+    if (this->_w)
+        std::cout << this->_name << " attacks with their " << this->_w->getType() << std::endl;
+    else
+        std::cout << "He's trying to attack with his fists !!!" << std::endl;
 }
 
 void    HumanB::setWeapon(Weapon &w)
