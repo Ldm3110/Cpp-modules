@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 23:47:07 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/07/15 12:45:42 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:57:58 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,19 +98,19 @@ static void	choice_manager(void)
 {
 	std::string choice;
 	Phonebook	phonebook;
+	int			sizeList = 3;
 	std::string	choices[3] = {
 		"ADD",
 		"SEARCH",
 		"EXIT"
 	};
 	int			num_choice = 0;
-
 	while (1) {
 		std::cout << "\nPlease choose your option (ADD, SEARCH, EXIT)" << std::endl;
 		std::getline(std::cin, choice);
 		if (std::cin.eof())
 			throw std::runtime_error("\nCtrl-D activation in search menu\n");
-		for (int i = 0; i < (int)choices->length(); i++) {
+		for (int i = 0; i < sizeList; i++) {
 			if (choice == choices[i])
 				num_choice = i + 1;
 		}
@@ -127,7 +127,7 @@ static void	choice_manager(void)
 			std::cout << "Thank you !! see you later :) !" << std::endl;
 			break;
 		default:
-			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << "|" << choice << "|" << std::endl;
+			std::cout << "Bad Keyword : Only ADD, SEARCH or EXIT" << std::endl;
 			break;
 		}
 	}
