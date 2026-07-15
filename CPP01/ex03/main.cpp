@@ -6,13 +6,11 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:21:19 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/27 14:06:13 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/15 15:20:09 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "classes/weapon.hpp"
-#include "classes/humanA.hpp"
-#include "classes/humanB.hpp"
+#include "classes/headers/all.hpp"
 
 int main()
 {
