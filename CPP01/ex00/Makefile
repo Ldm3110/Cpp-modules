@@ -1,12 +1,10 @@
 NAME = cpp01ex00
 
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
-SRCS = Zombie.cpp\
+SRCS = classes/Zombie.cpp\
 	   main.cpp\
-	   newZombie.cpp\
-	   randomChump.cpp
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
@@ -15,10 +13,10 @@ all: $(NAME)
 
 $(OBJDIR)/%.o: %.cpp
 	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
