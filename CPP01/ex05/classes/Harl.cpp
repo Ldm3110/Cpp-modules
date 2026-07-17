@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 20:19:16 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/27 21:53:18 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/17 09:23:06 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ void    Harl::complain(std::string level)
     for (int i = 0; i < 4; i++)
     {
         if (levels[i] == level)
+        {
             (this->*func[i])();
+            break ;
+        }
     }
 }
