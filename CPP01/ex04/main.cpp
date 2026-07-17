@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:38:49 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/04/27 19:34:35 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/17 08:57:30 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void replaceAndWrite(std::ifstream &file, std::string filename, std::string s1, 
             line = line.substr(word + s1.length());
             result += before + s2;
         }
-        result += line + '\n';
+        result += line;
+        if (!file.eof())
+            result += '\n';
     }
     std::ofstream outFile((filename + ".replace").c_str());
     outFile << result;
@@ -39,13 +41,13 @@ int main(int argc, char **argv)
 {
     if (argc != 4)
     {
-        std::cout << "bad number of args\n";
+        std::cout << "bad number of args" << std::endl;
         return 1;
     }
     std::ifstream file(argv[1]);
     if (!file.is_open())
     {
-        std::cout << "impossible to open file\n";
+        std::cout << "impossible to open file" << std::endl;
         return 1;
     }
     replaceAndWrite(file, argv[1], argv[2], argv[3]);
