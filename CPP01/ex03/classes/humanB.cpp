@@ -6,15 +6,13 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:02:01 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/07/15 15:18:22 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/17 08:35:48 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/humanB.hpp"
 
-HumanB::HumanB(std::string name): _name(name) {
-    this->_w = NULL;
-}
+HumanB::HumanB(std::string name): _name(name), _w(NULL) {}
 
 void    HumanB::attack(void)
 {

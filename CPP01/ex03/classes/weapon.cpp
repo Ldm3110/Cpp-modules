@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:36:49 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/07/15 14:56:51 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/07/17 08:39:20 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(std::string type) : _type(type) {}
 
-void Weapon::setType(std::string newType)
+void Weapon::setType(const std::string &newType)
 {
     this->_type = newType;
 }
