@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 14:52:16 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/06 14:50:27 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/06 15:37:38 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,43 +31,43 @@ Fixed::Fixed(const Fixed &other) {
 }
 
 bool    Fixed::operator < (const Fixed &other) const {
-    return (this->toFloat() < other.toFloat()); 
+    return (this->_value < other._value); 
 }
 
 bool    Fixed::operator > (const Fixed &other) const {
-    return (this->toFloat() > other.toFloat()); 
+    return (this->_value > other._value); 
 }
 
 bool    Fixed::operator >= (const Fixed &other) const {
-    return (this->toFloat() >= other.toFloat()); 
+    return (this->_value >= other._value); 
 }
 
 bool    Fixed::operator <= (const Fixed &other) const {
-    return (this->toFloat() <= other.toFloat()); 
+    return (this->_value <= other._value); 
 }
 
 bool    Fixed::operator == (const Fixed &other) const {
-    return (this->toFloat() == other.toFloat()); 
+    return (this->_value == other._value); 
 }
 
 bool    Fixed::operator != (const Fixed &other) const {
-    return (this->toFloat() != other.toFloat()); 
+    return (this->_value != other._value); 
 }
 
 Fixed Fixed::operator * (const Fixed &other) const {
-    return Fixed(this->toFloat() * other.toFloat());
+    return Fixed(this->_value * other._value);
 }
 
 Fixed Fixed::operator + (const Fixed &other) const {
-    return Fixed(this->toFloat() + other.toFloat());
+    return Fixed(this->_value + other._value);
 }
 
 Fixed Fixed::operator - (const Fixed &other) const {
-    return Fixed(this->toFloat() - other.toFloat());
+    return Fixed(this->_value - other._value);
 }
 
 Fixed Fixed::operator / (const Fixed &other) const {
-    return Fixed(this->toFloat() / other.toFloat());
+    return Fixed(this->_value / other._value);
 }
 
 // post incr/decr
