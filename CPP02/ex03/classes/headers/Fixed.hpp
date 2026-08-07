@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 14:52:20 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/06 15:03:29 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:19:59 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,5 @@ class Fixed {
         static const Fixed	&min(const Fixed &a, const Fixed &b);
         static const Fixed	&max(const Fixed &a, const Fixed &b);
 };
-
-std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif

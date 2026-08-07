@@ -1,11 +1,13 @@
 
-NAME = cpp02ex02
+NAME = bsp
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS =	main.cpp\
+		bsp.cpp \
 		classes/classDefs/Fixed.cpp\
+		classes/classDefs/Point.cpp \
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
