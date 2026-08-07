@@ -6,11 +6,12 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 14:52:16 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/06 14:04:11 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/07 14:16:45 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/Fixed.hpp"
+#include <cmath>
 
 const int Fixed::_fractBits = 8;
 
@@ -27,7 +28,7 @@ Fixed::Fixed(int value) {
 
 Fixed::Fixed(const float floatValue) {
 	std::cout << "Float constructor called" << std::endl;
-    this->_value = floatValue * (1 << Fixed::_fractBits);
+    this->_value = roundf(floatValue * (1 << Fixed::_fractBits));
 }
 
 Fixed::Fixed(const Fixed &other) {
@@ -65,7 +66,7 @@ float   Fixed::toFloat(void) const {
 }
 
 int     Fixed::toInt(void) const {
-    return (this->getRawBits() >> Fixed::_fractBits);
+    return (this->getRawBits() / (1 << Fixed::_fractBits));
 }
 
 // others

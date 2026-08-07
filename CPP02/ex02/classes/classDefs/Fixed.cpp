@@ -6,11 +6,12 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 14:52:16 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/06 15:37:38 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/07 11:50:31 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/Fixed.hpp"
+#include <cmath>
 
 const int Fixed::_fractBits = 8;
 
@@ -23,7 +24,7 @@ Fixed::Fixed(int value) {
 }
 
 Fixed::Fixed(const float floatValue) {
-    this->_value = floatValue * (1 << Fixed::_fractBits);
+    this->_value = roundf(floatValue * (1 << Fixed::_fractBits));
 }
 
 Fixed::Fixed(const Fixed &other) {
@@ -55,19 +56,25 @@ bool    Fixed::operator != (const Fixed &other) const {
 }
 
 Fixed Fixed::operator * (const Fixed &other) const {
-    return Fixed(this->_value * other._value);
+    Fixed	result(this->toFloat() * other.toFloat());
+	return result;
 }
 
 Fixed Fixed::operator + (const Fixed &other) const {
-    return Fixed(this->_value + other._value);
+	Fixed	result;
+	result.setRawBits(this->getRawBits() + other.getRawBits());
+	return result;
 }
 
 Fixed Fixed::operator - (const Fixed &other) const {
-    return Fixed(this->_value - other._value);
+	Fixed	result;
+	result.setRawBits(this->getRawBits() - other.getRawBits());
+	return result;
 }
 
 Fixed Fixed::operator / (const Fixed &other) const {
-    return Fixed(this->_value / other._value);
+    Fixed	result(this->toFloat() / other.toFloat());
+	return result;
 }
 
 // post incr/decr
@@ -117,7 +124,7 @@ float   Fixed::toFloat(void) const {
 }
 
 int     Fixed::toInt(void) const {
-    return (this->getRawBits() >> Fixed::_fractBits);
+    return (this->getRawBits() / (1 << Fixed::_fractBits));
 }
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b) {
