@@ -6,21 +6,36 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 19:02:43 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/05/06 07:37:24 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/13 23:55:44 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name): _name(name) {
-    ClapTrap::_hitpoints = 100;
-    ClapTrap::_energyPoints = 50;
-    ClapTrap::_attackDamage = 20;
-    std::cout << "Instance " << _name << " created\n";
+ClapTrap::ClapTrap(): _name("Unknow"), _hitpoints(1), _energyPoints(1), _attackDamage(0) {}
+
+ClapTrap::ClapTrap(std::string name): _name(name), _hitpoints(10), _energyPoints(10), _attackDamage(0) {
+    std::cout << "[ClapTrap] Instance " << _name << " created" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other) {
+	*this = other;
+	std::cout << "[ClapTrap] Copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << "Instance " << getName() << " removed\n";
+    std::cout << "[ClapTrap] Instance " << getName() << " removed" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
+	if (this != &other) {
+		this->_name = other._name;
+		this->_attackDamage = other._attackDamage;
+		this->_energyPoints = other._energyPoints;
+		this->_hitpoints = other._hitpoints;
+	}
+	return *this;
 }
 
 std::string ClapTrap::getName(void) {
@@ -37,6 +52,18 @@ int ClapTrap::getHitpoints(void) {
 
 int ClapTrap::getEnergyPoints(void) {
     return this->_energyPoints;
+}
+
+void	ClapTrap::setEnergyPoints(int ep) {
+	this->_energyPoints = ep;
+}
+
+void	ClapTrap::setHitpoints(int hp) {
+	this->_hitpoints = hp;
+}
+
+void	ClapTrap::setAttackDamage(int ad) {
+	this->_attackDamage = ad;
 }
 
 void    ClapTrap::setEnergyPoints() {
