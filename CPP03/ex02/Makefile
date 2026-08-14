@@ -1,4 +1,4 @@
-NAME = cpp03ex01
+NAME = cpp03ex02
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
@@ -6,6 +6,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 SRCS =	main.cpp\
 		classes/ClapTrap/ClapTrap.cpp\
 		classes/ScavTrap/ScavTrap.cpp\
+		classes/FragTrap/FragTrap.cpp\
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))

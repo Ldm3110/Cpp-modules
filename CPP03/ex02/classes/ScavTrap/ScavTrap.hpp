@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 20:22:50 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/05/06 08:06:52 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/14 10:36:11 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@
 class ScavTrap : public ClapTrap {
 
     public:
-    ScavTrap(std::string name);
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap &other);
     ~ScavTrap();
+
+	ScavTrap	&operator=(const ScavTrap &other);
+	
     void    attack(const std::string &target);
-    void    guardGate();
+    void    guardGate(void);
 };
 
 #endif
