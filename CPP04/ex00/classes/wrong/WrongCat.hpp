@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 12:26:29 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/05/20 12:37:27 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/14 21:56:32 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 class WrongCat : public WrongAnimal {
     public:
     WrongCat();
+	WrongCat(std::string type);
+	WrongCat(const WrongCat &other);
     ~WrongCat();
+
+	WrongCat	&operator=(const WrongCat &other);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 18:55:10 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 21:51:11 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/14 22:06:01 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main()
 	std::cout << "=== END OF CREATION ===\n" << std::endl;
 
 	std::cout << "--- Type ---" << std::endl;
-    std::cout << "type of j = " << j->getType() << " " << std::endl;
-    std::cout << "type of i = " << i->getType() << " " << std::endl;
-    std::cout << "type of meta = " << meta->getType() << " " << std::endl;
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    std::cout << meta->getType() << " " << std::endl;
     
 	std::cout << "\n--- Sounds ---" << std::endl;
 	i->makeSound();
@@ -43,7 +43,7 @@ int main()
 	delete newCat;
 
     // The same things but with a Wrong Cat
-    std::cout << "\nPlaying with WrongAnimal and WrongCat\n";
+    std::cout << "\n=== Playing with WrongAnimal and WrongCat ===" << std::endl;
     const WrongAnimal *metaWrong = new WrongAnimal();;
     const WrongAnimal *miaou = new WrongCat();
 

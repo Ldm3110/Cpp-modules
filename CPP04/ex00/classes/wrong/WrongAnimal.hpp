@@ -21,7 +21,11 @@ class WrongAnimal {
 
     public:
     WrongAnimal();
+	WrongAnimal(std::string type);
+	WrongAnimal(const WrongAnimal &other);
     virtual ~WrongAnimal();
+
+	WrongAnimal	&operator=(const WrongAnimal &other);
 
     virtual void        makeSound() const;
     virtual std::string getType() const;

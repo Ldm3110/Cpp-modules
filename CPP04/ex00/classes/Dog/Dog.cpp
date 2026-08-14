@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:11:49 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 21:41:33 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/14 22:05:29 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Dog.hpp"
 
 Dog::Dog(): Animal() {
-	this->type = "Dog";
+	this->type = "[type] Dog";
     std::cout << "[Dog] I build a " << this->type << std::endl;
 }
 

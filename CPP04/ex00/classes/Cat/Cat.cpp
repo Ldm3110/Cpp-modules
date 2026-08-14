@@ -6,14 +6,14 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:59:26 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 21:51:27 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/14 22:05:29 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat(): Animal() {
-	this->type = "Cat";
+	this->type = "[type] Cat";
     std::cout << "[Cat] I build a " << this->type << std::endl;
 };
 
