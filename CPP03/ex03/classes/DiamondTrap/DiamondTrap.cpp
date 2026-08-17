@@ -6,13 +6,16 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 11:39:19 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 15:53:53 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:45:08 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() {}
+DiamondTrap::DiamondTrap():
+	ClapTrap(),
+	FragTrap(),
+	ScavTrap() {}
 
 DiamondTrap::DiamondTrap(std::string name):
 	ClapTrap(name + "_clap_name"),
@@ -49,19 +52,7 @@ DiamondTrap::~DiamondTrap() {
 }
 
 void    DiamondTrap::attack(const std::string &target) {
-    if (this->getHitpoints() == 0 || this->getEnergyPoints() == 0) {
-        std::cout << "Not enough hitpoints/energy points to attack ... sorry !";
-        return ;
-    }
-    std::cout 
-            << "[DiamondTrap] " 
-            << this->getName() 
-            << " attacks " 
-            << target
-            << ", causing "
-            << this->getDamage()
-            << " points of damage !\n";
-    this->setEnergyPoints();
+	ScavTrap::attack(target);
 }
 
 std::string	DiamondTrap::getName(void) {
