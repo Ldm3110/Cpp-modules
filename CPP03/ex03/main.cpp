@@ -6,21 +6,21 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 11:29:58 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 14:55:13 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:58:11 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "classes/all.hpp"
 
-void	displayStatus(DiamondTrap *instance) {
+void	displayStatus(DiamondTrap &instance) {
 	std::cout 
-		<< instance->getName()
+		<< instance.getName()
 		<< " || Hitpoints = "
-		<< instance->getHitpoints()
+		<< instance.getHitpoints()
 		<< " - Energy points remaining = "
-		<< instance->getEnergyPoints()
+		<< instance.getEnergyPoints()
 		<< " - Attack Damage Points = "
-		<< instance->getDamage()
+		<< instance.getDamage()
 		<< "\n"
 		<< std::endl;
 }
@@ -30,7 +30,7 @@ int	main(void) {
 	DiamondTrap diamond = DiamondTrap("Ruby");
 	std::cout << "=== END OF CREATION ===\n" << std::endl;
 
-	displayStatus(&diamond);
-
+	displayStatus(diamond);
+	diamond.whoAmI();
 	return 0;
 }

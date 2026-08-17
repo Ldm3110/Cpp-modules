@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 11:39:19 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/17 20:45:08 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:59:41 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,8 @@ std::string	DiamondTrap::getName(void) {
 }
 
 void	DiamondTrap::whoAmI(void) {
-	std::cout << "Who am I ?? a lot of things !!!!" << std::endl;
+	std::cout 
+		<< "[DiamondTrap name] " << this->getName() 
+		<< " --- " 
+		<< "[ClapTrap name] " << ClapTrap::getName() << "\n" << std::endl;
 }
