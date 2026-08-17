@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 22:49:40 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 15:30:35 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:51:22 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name) {
 	setHitpoints(HITPOINTS);
 	setEnergyPoints(ENERGYPOINTS);
 	setAttackDamage(ATTACKDAMAGE);
-	std::cout << "[FlagTrap] FlagTrap constructor called" << std::endl;
+	std::cout << "[FragTrap] FragTrap constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &other): ClapTrap(other) {
@@ -34,12 +34,12 @@ FragTrap::~FragTrap() {
 FragTrap	&FragTrap::operator=(const FragTrap &other) {
 	if (this != &other)
 		ClapTrap::operator=(other);
-	std::cout << "[FlagTrap] Copy assignment operator called" << std::endl;
+	std::cout << "[FragTrap] Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
 void    FragTrap::attack(const std::string &target) {
-    if (this->getHitpoints() == 0 || this->getEnergyPoints() == 0) {
+    if (this->getHitpoints() <= 0 || this->getEnergyPoints() == 0) {
         std::cout << "Not enough hitpoints/energy points to attack ... sorry !";
         return ;
     }
