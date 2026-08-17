@@ -6,16 +6,16 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 19:02:43 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/13 22:31:02 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:38:47 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-	_name = "Unknow";
-	_hitpoints = 0;
-	_energyPoints = 0;
+	_name = "Unknown";
+	_hitpoints = 10;
+	_energyPoints = 10;
 	_attackDamage = 0;
 }
 
