@@ -6,14 +6,14 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 19:02:43 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/13 23:55:44 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:49:08 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("Unknow"), _hitpoints(1), _energyPoints(1), _attackDamage(0) {}
+ClapTrap::ClapTrap(): _name("Unknown"), _hitpoints(10), _energyPoints(10), _attackDamage(0) {}
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitpoints(10), _energyPoints(10), _attackDamage(0) {
     std::cout << "[ClapTrap] Instance " << _name << " created" << std::endl;
@@ -71,7 +71,7 @@ void    ClapTrap::setEnergyPoints() {
 }
 
 void    ClapTrap::attack(const std::string &target) {
-    if (this->getHitpoints() == 0 || this->getEnergyPoints() == 0) {
+    if (this->getHitpoints() <= 0 || this->getEnergyPoints() == 0) {
         std::cout << "Not enough hitpoints/energy points to attack ... sorry !";
         return ;
     }
@@ -92,7 +92,7 @@ void    ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void    ClapTrap::beRepaired(unsigned int amount) {
-    if (this->getHitpoints() == 0 || this->getEnergyPoints() == 0) {
+    if (this->getHitpoints() <= 0 || this->getEnergyPoints() == 0) {
         std::cout << "Not enough hitpoints/energy points to repair ... sorry !\n";
         return ;
     }
