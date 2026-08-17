@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 20:22:52 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 00:04:28 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/17 20:42:58 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void    ScavTrap::guardGate(void) {
 }
 void    ScavTrap::attack(const std::string &target) {
 
-    if (this->getHitpoints() == 0 || this->getEnergyPoints() == 0) {
+    if (this->getHitpoints() <= 0 || this->getEnergyPoints() == 0) {
         std::cout << "Not enough hitpoints/energy points to attack ... sorry !";
         return ;
     }
