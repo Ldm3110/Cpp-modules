@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:57:39 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 16:51:07 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/18 12:09:14 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,26 @@
 # define CAT_HPP
 
 # include "../Animal/Animal.hpp"
+# include "../Brain/Brain.hpp"
+
+# define RED     "\033[31m"
+# define RESET   "\033[0m"
 
 class Cat : public Animal {
+
+	private:
+		Brain *catBrain;
+
     public:
-    Cat();
-	Cat(std::string type);
-	Cat(const Cat &other);
-    ~Cat();
+		Cat();
+		Cat(std::string type);
+		Cat(const Cat &other);
+		~Cat();
 
-	Cat &operator=(const Cat &other);
+		Cat &operator=(const Cat &other);
 
-    void makeSound() const;
+		void	makeSound() const;
+		Brain	&getBrain(void) const;
 };
 
 #endif

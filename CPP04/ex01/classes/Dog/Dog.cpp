@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:11:49 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 22:05:29 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/18 12:13:20 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,36 @@
 #include "Dog.hpp"
 
 Dog::Dog(): Animal() {
-	this->type = "[type] Dog";
-    std::cout << "[Dog] I build a " << this->type << std::endl;
+	this->type = "Dog";
+	this->dogBrain = new Brain("I want to eat this cat !!!!");
+    std::cout << BLUE << "[Dog] I build a " << this->type << RESET << std::endl;
 }
 
-Dog::Dog(std::string type): Animal(type) {}
+Dog::Dog(std::string type): Animal(type) {
+	this->dogBrain = new Brain();
+}
 
-Dog::Dog(const Dog &other): Animal(other) {}
+Dog::Dog(const Dog &other): Animal(other) {
+	*this = other;
+}
 
 Dog::~Dog() {
-    std::cout << "[Dog] Remove instance !" << std::endl;
+	delete this->dogBrain;
+    std::cout << BLUE << "[Dog] Remove instance !" << RESET << std::endl;
 }
 
 Dog	&Dog::operator=(const Dog &other) {
-	if (this != &other)
+	if (this != &other) {
 		Animal::operator=(other);
+		this->dogBrain = new Brain();
+	}
 	return *this;
 }
 
 void    Dog::makeSound() const {
-    std::cout << "[Dog] Ouaf Ouaf\n";
+    std::cout << BLUE << "[Dog] Ouaf Ouaf" << RESET << std::endl;
+}
+
+Brain	&Dog::getBrain(void) const {
+	return *this->dogBrain;
 }
