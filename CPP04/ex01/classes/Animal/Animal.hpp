@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:05:31 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 16:54:15 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/18 12:02:10 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+# include "../Brain/Brain.hpp"
 
 class Animal {
     protected:
@@ -29,6 +30,8 @@ class Animal {
 
     virtual void        makeSound() const;
     virtual std::string getType() const;
+
+	virtual Brain &getBrain(void) const = 0;
 };
 
 #endif

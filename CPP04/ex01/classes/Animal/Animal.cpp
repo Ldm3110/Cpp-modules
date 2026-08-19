@@ -6,14 +6,14 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:08:39 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/14 22:05:39 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/18 09:47:34 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal() {
-    type = "[type] Seagulls";
+    type = "Seagulls";
     std::cout << "[Animal] I build a " << this->type << std::endl;
 }
 
@@ -39,4 +39,9 @@ void    Animal::makeSound() const {
 
 std::string Animal::getType() const {
     return this->type;
+}
+
+std::ostream &operator<<(std::ostream &os, const Animal &animal) {
+	os << animal;
+	return os;
 }
