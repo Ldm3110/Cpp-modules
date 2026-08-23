@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 10:50:46 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/22 22:35:26 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 15:16:58 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Ice: public AMateria {
 	
 	public:
 		Ice();
-		//Ice(std::string type);
 		Ice(const Ice &other);
 		~Ice();
 
