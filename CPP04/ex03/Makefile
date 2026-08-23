@@ -8,6 +8,7 @@ SRCS =	main.cpp\
 		classes/Cure/Cure.cpp\
 		classes/Materia/Materia.cpp\
 		classes/MateriaSource/MateriaSource.cpp\
+		classes/Character/Character.cpp
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))

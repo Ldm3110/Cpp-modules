@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 15:40:15 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/22 15:41:38 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 16:19:24 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 // classes
 #include "Materia/Materia.hpp"
 #include "MateriaSource/MateriaSource.hpp"
+#include "Character/Character.hpp"
 #include "Ice/Ice.hpp"
 #include "Cure/Cure.hpp"
 
