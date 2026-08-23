@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 17:22:31 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/22 23:40:27 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 18:31:22 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,31 @@ int	main(void) {
 	// src->learnMateria(new Ice());
 	// src->learnMateria(new Ice());
 
-	src->displaySlots();
+	// src->displaySlots();	
 	
-	
-	// ICharacter *me = new Character("me");
+	ICharacter *me = new Character("The Hunter");
+	// me->displayCharacter();
 	AMateria *tmp;
 	tmp = src->createMateria("ice");
-	tmp->getInfo();
-	delete tmp;
-	// me->equip(tmp);
-	// tmp = src->createMateria("cure");
-	// me->equip(tmp);
+	// tmp->getInfo();
+	me->equip(tmp);
+	// me->displayCharacter();	
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	me->displayCharacter();
+	ICharacter *bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	// me->use(2, *bob);
+
+	AMateria *materiaOnFloor = me->getMateria(1);
+	me->unequip(1);
+	me->displayCharacter();
 	
-	// ICharacter *bob = new Character("bob");
-	// me->use(0, *bob);
-	// me->use(1, *bob);
-	
-	// delete bob;
-	// delete me;
+	delete bob;
+	delete me;
 	delete src;
+	delete materiaOnFloor;
 
 	return 0;
 }
