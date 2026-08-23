@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 17:39:01 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/23 15:45:12 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 17:22:12 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	MateriaSource::learnMateria(AMateria *obj) {
 	for (int i = 0; i < 4; i++) {
 		if (this->slots[i] == NULL) {
 			this->slots[i] = obj;
+			// std::cout << "Add object in slot " << i << std::endl;
 			return ;
 		}
 	}
@@ -63,9 +64,10 @@ AMateria	*MateriaSource::createMateria(std::string const &type) {
 }
 
 void	MateriaSource::displaySlots(void) {
+	std::cout << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->slots[i] != NULL) {
-			std::cout << "slot " << i << " -- " << this->slots[i]->getType()
+			std::cout << "[Materia Source] slot " << i << " -- " << this->slots[i]->getType()
 			<< " (" << this->slots[i] << ")" << std::endl;
 		}
 	}

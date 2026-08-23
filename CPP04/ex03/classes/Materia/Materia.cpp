@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 22:21:53 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/22 23:39:09 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 18:59:53 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,8 @@ AMateria::~AMateria() {}
 
 void	AMateria::getInfo(void) const {
 	std::cout << this->type << " at address " << this << std::endl;
+}
+
+void	AMateria::use(ICharacter &target) {
+	(void) target;
 }

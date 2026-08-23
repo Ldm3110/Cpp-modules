@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 10:54:24 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/23 15:16:53 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 18:59:32 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "../Materia/Materia.hpp"
+#include "../Character/Character.hpp"
 
 class Cure: public AMateria {
 	
@@ -26,6 +27,7 @@ class Cure: public AMateria {
 		Cure &operator=(const Cure &other);
 
 		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 		
 };
 

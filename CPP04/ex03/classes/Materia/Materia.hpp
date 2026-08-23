@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 10:29:08 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/22 23:35:29 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 18:55:44 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # define AMATERIA_HPP
 
 #include <iostream>
+
+class ICharacter;
 
 class AMateria {
 	protected:
@@ -31,7 +33,7 @@ class AMateria {
 		std::string const	&getType() const;
 		virtual AMateria	*clone() const = 0;
 		void				getInfo(void) const;
-		//virtual void 		use(ICharacter& target);
+		virtual void 		use(ICharacter& target);
 };
 
 #endif

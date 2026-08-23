@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 10:50:46 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/23 15:16:58 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 18:59:12 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "../Materia/Materia.hpp"
+#include "../Character/Character.hpp"
 
 class Ice: public AMateria {
 	
@@ -26,6 +27,7 @@ class Ice: public AMateria {
 		Ice	&operator=(const Ice &other);
 
 		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 };
 
 #endif

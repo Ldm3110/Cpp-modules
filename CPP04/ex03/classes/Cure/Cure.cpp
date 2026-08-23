@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 23:03:50 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/22 23:16:32 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 18:38:55 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,8 @@ Cure::~Cure() {}
 
 AMateria	*Cure::clone(void) const {
 	return new Cure(*this);
+}
+
+void	Cure::use(ICharacter &target) {
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
