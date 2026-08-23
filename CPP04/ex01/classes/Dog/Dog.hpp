@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:03:05 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/18 12:09:54 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/20 11:48:55 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ class Dog : public Animal {
 
 		Dog	&operator=(const Dog &other);
 
-		void	makeSound() const;
-		Brain	&getBrain(void) const;
+		void		makeSound() const;
+		Brain		&getBrain(void) const;
+		std::string	giveMeAnIdea(int index) const;
 };
 
 #endif

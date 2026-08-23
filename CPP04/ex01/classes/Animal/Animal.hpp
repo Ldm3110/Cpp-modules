@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:05:31 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/18 12:02:10 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/20 14:55:54 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ class Animal {
 	Animal	&operator=(const Animal &other);
 
     virtual void        makeSound() const;
-    virtual std::string getType() const;
-
-	virtual Brain &getBrain(void) const = 0;
+    virtual std::string	getType() const;
+	virtual std::string	giveMeAnIdea(int index) const;
 };
 
 #endif

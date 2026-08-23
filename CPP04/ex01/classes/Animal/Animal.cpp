@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:08:39 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/18 09:47:34 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/20 14:56:12 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal	&Animal::operator=(const Animal &other) {
 }
 
 void    Animal::makeSound() const {
-    std::cout << "[Animal] tweet tweet tweet\n\n";
+    std::cout << "[Animal] tweet tweet tweet" << std::endl;
 }
 
 std::string Animal::getType() const {
@@ -44,4 +44,9 @@ std::string Animal::getType() const {
 std::ostream &operator<<(std::ostream &os, const Animal &animal) {
 	os << animal;
 	return os;
+}
+
+std::string	Animal::giveMeAnIdea(int index) const {
+	(void) index;
+	return "Sorry, I don't have any ideas !!!";
 }

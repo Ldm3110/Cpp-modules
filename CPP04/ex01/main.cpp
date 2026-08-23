@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 09:35:04 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/18 12:12:45 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/20 11:54:54 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,17 @@ int	main(void) {
 		delete animalArray[i];
 
 	std::cout << GREEN << "\n=== Work with polymorphism and abstract method ===\n" << RESET << std::endl;
-	
-	const Animal	*cat = new Cat();
-	const Animal	*dog = new Dog();
+
+	const Animal	*generic = new Animal();
+	const Cat		*cat = new Cat();
+	const Dog		*dog = new Dog();
 
 	std::cout << "\n";
+	generic->makeSound();
+	std::cout << generic->giveMeAnIdea(32) << std::endl;
+	std::cout << GREEN << "--- Same work with children ---" << RESET << std::endl;
 	cat->makeSound();
-	std::cout << YELLOW << cat->getBrain().giveMeAnIdea(5) << RESET << std::endl;
+	std::cout << YELLOW << cat->giveMeAnIdea(5) << RESET << std::endl;
 	dog->makeSound();
 	std::cout << YELLOW << dog->getBrain().giveMeAnIdea(57) << RESET << std::endl;
 	std::cout << "\n";

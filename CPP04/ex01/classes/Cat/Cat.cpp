@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:59:26 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/18 12:11:11 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/20 10:24:59 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,8 @@ void    Cat::makeSound() const {
 
 Brain	&Cat::getBrain(void) const {
 	return *this->catBrain;
+}
+
+std::string	Cat::giveMeAnIdea(int index) const {
+	return this->catBrain->giveMeAnIdea(index);
 }

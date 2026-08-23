@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:57:39 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/18 12:09:14 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/20 11:51:32 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ class Cat : public Animal {
 
 		Cat &operator=(const Cat &other);
 
-		void	makeSound() const;
-		Brain	&getBrain(void) const;
+		void		makeSound() const;
+		Brain		&getBrain(void) const;
+		std::string	giveMeAnIdea(int index) const;
 };
 
 #endif

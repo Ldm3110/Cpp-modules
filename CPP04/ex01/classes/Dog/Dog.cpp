@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:11:49 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/18 12:13:20 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/20 11:45:41 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,8 @@ void    Dog::makeSound() const {
 
 Brain	&Dog::getBrain(void) const {
 	return *this->dogBrain;
+}
+
+std::string	Dog::giveMeAnIdea(int index) const {
+	return this->dogBrain->giveMeAnIdea(index);
 }
