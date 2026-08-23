@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 17:39:01 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/22 23:40:19 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/23 15:45:12 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &other) {
 		for (int i = 0; i < 4; i++) {
 			if (other.slots[i] != NULL) {
 				this->slots[i] = other.slots[i];
+			} else {
+				this->slots[i] = NULL;
 			}
 		}
 	}
