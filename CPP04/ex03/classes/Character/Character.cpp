@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/23 15:28:48 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/23 19:04:25 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/24 14:31:35 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	Character::use(int idx, ICharacter &target) {
 	if (this->slots[idx] == NULL) {
 		std::cout << "Hey " << this->getName() <<  " !! You really want to attack " 
 			<< target.getName() << " without Materia ?? " << std::endl;
+		return ;
 	}
 	this->slots[idx]->use(target);
 }
