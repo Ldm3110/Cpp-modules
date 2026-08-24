@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:08:39 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/20 14:56:12 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/24 15:08:05 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ std::string Animal::getType() const {
 }
 
 std::ostream &operator<<(std::ostream &os, const Animal &animal) {
-	os << animal;
+	os << animal.getType();
 	return os;
 }
 

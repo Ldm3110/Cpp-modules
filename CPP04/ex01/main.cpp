@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 09:35:04 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/20 11:54:54 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/24 15:07:57 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	main(void) {
 	std::cout << "\n";
 	delete cat;
 	delete dog;
+	delete generic;
 
 	return 0;
 }

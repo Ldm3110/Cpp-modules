@@ -42,6 +42,6 @@ std::string AAnimal::getType() const {
 }
 
 std::ostream &operator<<(std::ostream &os, const AAnimal &AAnimal) {
-	os << AAnimal;
+	os << AAnimal.getType();
 	return os;
 }
