@@ -6,7 +6,7 @@
 /*   By: lude-mat <lude-mat@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 09:58:10 by lude-mat          #+#    #+#             */
-/*   Updated: 2026/08/31 10:57:39 by lude-mat         ###   ########.fr       */
+/*   Updated: 2026/08/31 12:02:21 by lude-mat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+
+# define RESET   "\033[0m"
+# define BLUE    "\033[34m"
 
 class Bureaucrat {
 	private:
