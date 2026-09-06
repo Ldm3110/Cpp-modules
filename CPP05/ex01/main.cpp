@@ -23,7 +23,7 @@ int	main(void) {
 	// catch(const std::exception &e) {
 	// 	std::cerr << e.what() << '\n';
 	// }
-	
+
 	// std::cout << BLUE << "\nTry to create a bad Bureaucrat with grade to low and catch the error" << RESET << std::endl;
 
 	// try {
@@ -42,15 +42,15 @@ int	main(void) {
 	catch(const std::exception &e) {
 		std::cerr << e.what() << '\n';
 	}
-	// std::cout << "grade before increase = " << test->getGrade() << std::endl; 
+	// std::cout << "grade before increase = " << test->getGrade() << std::endl;
 	// test->increaseGrade();
-	// std::cout << "grade after increase = " << test->getGrade() << std::endl; 
+	// std::cout << "grade after increase = " << test->getGrade() << std::endl;
 
-	// std::cout << "grade before decrease = " << test->getGrade() << std::endl; 
+	// std::cout << "grade before decrease = " << test->getGrade() << std::endl;
 	// test->decreaseGrade();
 	// std::cout << "grade after decrease = " << test->getGrade() << std::endl;
 	// delete test;
-	
+
 	// std::cout << BLUE << "\nTry to create a Bureaucrat with 1 of grade and increase it (from 1 to 0)" << RESET << std::endl;
 	// try {
 	// 	Bureaucrat otherTest("Titouan", 1);
@@ -59,7 +59,7 @@ int	main(void) {
 	// catch(const std::exception &e) {
 	// 	std::cerr << e.what() << std::endl;
 	// }
-	
+
 	// std::cout << BLUE << "\nSame like before whit grade 150 and decrease it (from 150 to 151)" << RESET << std::endl;
 	// try {
 	// 	Bureaucrat otherTest("Me", 150);
@@ -97,9 +97,9 @@ int	main(void) {
 		std::cerr << e.what() << '\n';
 	}
 	otherB->signForm(*form);
-	// 
+
 	delete form;
 	delete test;
 	delete otherB;
-	return 0;	
+	return 0;
 }
