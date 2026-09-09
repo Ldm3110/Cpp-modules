@@ -85,6 +85,13 @@ void		Bureaucrat::signForm(AForm &form) {
 	}
 }
 
+void		Bureaucrat::executeForm(const AForm &form) const {
+	if (this->_grade <= form.requiredGradeExec())
+		std::cout << *this << " executed " << form << std::endl;
+	else
+		throw Bureaucrat::GradeTooHighException();
+}
+
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
 	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return os;
