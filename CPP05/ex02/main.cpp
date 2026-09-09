@@ -12,7 +12,9 @@
 
 #include "classes/Bureaucrat/Bureaucrat.hpp"
 #include "classes/Form/Form.hpp"
+#include "classes/Form/Presidential/Presidential.hpp"
 #include "classes/Form/Shrubbery/Shrubbery.hpp"
+#include "classes/Form/Robotomy/Robotomy.hpp"
 #include <exception>
 
 
@@ -41,9 +43,9 @@ int main(void) {
   std::cout << BLUE << "\nTry to create a good Bureaucrat" << RESET
             << std::endl;
 
-  Bureaucrat *test = NULL;
+  Bureaucrat *bureaucrat = NULL;
   try {
-  	test = new Bureaucrat("Mickeal", 42);
+  	bureaucrat = new Bureaucrat("Mickeal", 42);
   } catch (const std::exception &e) {
     std::cerr << e.what() << std::endl;
   }
@@ -73,7 +75,7 @@ int main(void) {
   std::cout << BLUE << "\nTry to execute the form (impossible because not signed)"
   			<< RESET << std::endl;
   try {
-  	form->execute(*test);
+  	form->execute(*bureaucrat);
   } catch (const std::exception &e) {
   	std::cerr << e.what() << std::endl;
   }
@@ -81,29 +83,37 @@ int main(void) {
   std::cout << BLUE << "\nOkey now bureaucrat sign form and try to execute it"
   			<< RESET << std::endl;
   try {
-  	test->signForm(*form);
+  	bureaucrat->signForm(*form);
    	std::cout << (form->isSigned() ? "SIGNED" : "NOT SIGNED") << std::endl;
-   	form->execute(*test);
+   	form->execute(*bureaucrat);
   } catch (const std::exception &e) {
   	std::cerr << e.what() << std::endl;
   }
-  // form = new Form("Formulaire B727", false, 15, 5);
-  // std::cout << *form << std::endl;
 
-  // std::cout << BLUE << "\nBureaucrat try to work with form but his grade is
-  // too low" << RESET << std::endl; test->signForm(*form);
+  std::cout << GREEN << "Same tests with Robotomy and Presidential"
+  			<< RESET << std::endl;
 
-  // std::cout << BLUE << "\nNow, create a Bureaucrat with good grade and try to
-  // sign the same Form" << RESET << std::endl; Bureaucrat *otherB = NULL; try {
-  // 	otherB = new Bureaucrat("John", 5);
-  // }
-  // catch(const std::exception &e) {
-  // 	std::cerr << e.what() << '\n';
-  // }
-  // otherB->signForm(*form);
-  //
+  AForm *robotomyForm = NULL;
+  AForm *presidentialForm = NULL;
+  try {
+  	robotomyForm = new RobotomyRequestForm("robotomy");
+   	presidentialForm = new PresidentialPardonForm("president");
+    std::cout << *robotomyForm << " and " << *presidentialForm << std::endl;
+  } catch (const std::exception &e) {
+  	std::cerr << e.what() << std::endl;
+  }
+
+  std::cout << BLUE << "\nTry to execute form"
+  			<< RESET << std::endl;
+  try {
+	  bureaucrat->executeForm(*robotomyForm);
+	  bureaucrat->executeForm(*presidentialForm);
+  } catch (const std::exception &e) {
+  	std::cerr << e.what() << std::endl;
+  }
   delete form;
-  delete test;
-  // delete otherB;
+  delete bureaucrat;
+  delete robotomyForm;
+  delete presidentialForm;
   return 0;
 }
