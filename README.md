@@ -1,2 +1,2 @@
 # Cpp-modules
-Cpp modules from common core
+Cpp modules of 42 common core
