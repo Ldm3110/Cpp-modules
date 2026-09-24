@@ -2,7 +2,6 @@
 
 #include <cstdlib>
 #include <iostream>
-#include <typeinfo>
 
 Base	*generate(void) {
 	srand(time(NULL));
@@ -34,28 +33,22 @@ static void	identify(Base *p) {
 static void	identify(Base &p) {
 	try {
 		A &a = dynamic_cast<A&>(p);
-		std::cout << "It's a A class (reference)" << std::endl;
+		std::cout << "It's A class (reference)" << std::endl;
 		(void) a;
 		return ;
-	} catch (std::bad_cast &exp) {
-		(void) exp;
-	}
+	} catch (...) {}
 	try {
 		B &b = dynamic_cast<B&>(p);
-		std::cout << "It's a B class (reference)" << std::endl;
+		std::cout << "It's B class (reference)" << std::endl;
 		(void) b;
 		return ;
-	} catch (std::bad_cast &exp) {
-		(void) exp;
-	}
+	} catch (...) {}
 	try {
 		C &c = dynamic_cast<C&>(p);
-		std::cout << "It's a C class (reference)" << std::endl;
+		std::cout << "It's C class (reference)" << std::endl;
 		(void) c;
 		return ;
-	} catch (std::bad_cast &exp) {
-		(void) exp;
-	}
+	} catch (...) {}
 	std::cerr << "Bad cast" << std::endl;
 }
 
