@@ -99,7 +99,7 @@ int main(void) {
   AForm		*robotForm = NULL;
   AForm		*presidentForm = NULL;
   try {
-	  shrubForm = slave.makeForm("shrubbery form S345", "shrubbery");
+	  shrubForm = slave.makeForm("shrubbery_form_S345", "shrubbery");
 	  robotForm = slave.makeForm("roboForm C3PO", "robotomy");
 	  presidentForm = slave.makeForm("president form", "toto");
   } catch (const std::exception &e) {
