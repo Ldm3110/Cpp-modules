@@ -16,6 +16,7 @@ int	main(void) {
 	v.push_back(9);
 
 	std::cout << GREEN << "===== Begin tests =====\n" << RESET << std::endl;
+	std::cout << BLUE << "1. Vector\n" << RESET << std::endl;
 	std::cout << BLUE << "value not in vector" << RESET << std::endl;
 	try {
 		easyfind(v, 0);
@@ -28,6 +29,14 @@ int	main(void) {
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << BLUE << "\nconst vector" << RESET << std::endl;
+	const std::vector<int> constV(v);
+	try {
+		easyfind(v, 1);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << BLUE << "\n2. List\n" << RESET << std::endl;
 	std::cout << GREEN << "\n===== Begin tests =====" << RESET << std::endl;
 	return 0;
 }
