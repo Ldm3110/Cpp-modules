@@ -18,10 +18,3 @@ void	iter(T *arrPtr, const size_t lenArr, void(*fPtr)(Telem)) {
 		fPtr(arrPtr[i]);
 	}
 }
-
-// template<typename T, typename TCElem>
-// void	iter(T *arrPtr, const size_t lenArr, void(*fPtr)(TCElem)) {
-// 	for (int i = 0; i < lenArr; i++) {
-// 		fPtr(arrPtr[i]);
-// 	}
-// }
