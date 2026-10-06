@@ -1,9 +1,10 @@
-NAME = vector
+NAME = span
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 SRCS =	main.cpp\
+		classes/Span.cpp\
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
