@@ -15,12 +15,24 @@ class Span {
 
 		Span	&operator=(const Span &other);
 
-		void	addNumber(int number);
-		// int		shortestSpan();
-		// int		longestSpan();
-
-		class FullSpanException: std::exception {
+		// Exceptions
+		class FullSpanException: public std::exception {
 			public:
 				const char	*what() const throw();
 		};
+
+		class ShortestException: std::exception {
+			public:
+				const char	*what() const throw();
+		};
+
+		class LongestException: std::exception {
+			public:
+				const char	*what() const throw();
+		};
+
+		// members functions 
+		void	addNumber(int number);
+		int		shortestSpan(void) const ;
+		int		longestSpan(void) const;
 };
