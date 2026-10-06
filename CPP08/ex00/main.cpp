@@ -1,5 +1,6 @@
 #include <exception>
 #include <vector>
+#include <list>
 #include "template.hpp"
 
 # define RESET   "\033[0m"
@@ -37,6 +38,29 @@ int	main(void) {
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << BLUE << "\n2. List\n" << RESET << std::endl;
-	std::cout << GREEN << "\n===== Begin tests =====" << RESET << std::endl;
+	std::list<int> l;
+	// std::list<int>::iterator it = l.begin();
+	std::cout << BLUE << "value not in list" << RESET << std::endl;
+	for (int i = 0; i < 5; i++)
+		l.push_back(i * 2);
+	try {
+		easyfind(l, 5);
+	} catch (std::exception &e) {
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+	std::cout << BLUE << "\nvalue in list" << RESET << std::endl;
+	try {
+		easyfind(l, 4);
+	} catch (std::exception &e) {
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+	std::cout << BLUE << "\nvalue in const list" << RESET << std::endl;
+	const std::list<int> constL(l); 
+	try {
+		easyfind(l, 4);
+	} catch (std::exception &e) {
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+	std::cout << GREEN << "\n===== End tests =====" << RESET << std::endl;
 	return 0;
 }
